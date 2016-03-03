@@ -1,0 +1,47 @@
+<?php include "header.phtml"?>    
+<?php include "nav.phtml"?>    
+<?php include "sidebar.phtml"?>    
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h1 class="page-header">Dashboard</h1>
+        <div class="row placeholders">
+            <div class="col-xs-6 col-sm-3 placeholder">
+                <script id="editor" type="text/plain" style="width:1024px;height:500px;"></script>
+            </div> <!--placeholder-->
+        </div> <!--placeholders-->
+</div><!--main-->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" charset="utf-8" src="ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/libs/ueditor/1.4.3.1/ueditor.all.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/libs/ueditor/1.4.3.1/lang/zh-cn/zh-cn.js"></script>
+    <script type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+
+        //实例化编辑器
+        //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+        var ue = UE.getEditor('editor', {
+
+                //这里可以选择自己需要的工具按钮名称,此处仅选择如下五个
+                //toolbars:[['FullScreen', 'Source', 'Undo', 'Redo','Bold','test']],
+                //focus时自动清空初始化时的内容
+                //autoClearinitialContent:true,
+                //关闭字数统计
+                //wordCount:false,
+                //关闭elementPath
+                //elementPathEnabled:false,
+                //默认的编辑区域高度
+                //initialFrameHeight:300,
+                //更多其他参数，请参考ueditor.config.js中的配置项
+                serverUrl: '/ueditor/controller'
+
+
+            });
+
+
+    </script>
+   
+
+<?php include "footer.phtml"?>    
